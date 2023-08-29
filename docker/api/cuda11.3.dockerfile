@@ -43,6 +43,12 @@ ENV EASYNMT_CACHE=/cache/easynmt
 ENV TRANSFORMERS_CACHE=/cache/transformers
 ENV TORCH_CACHE=/cache/torch
 
+ARG EASYNMT_MODEL=opus-mt
+ENV EASYNMT_MODEL=${EASYNMT_MODEL}
+
+# download model
+RUN python -c "from easynmt import EasyNMT; import os; EasyNMT(os.getenv('EASYNMT_MODEL', 'opus-mt'))"
+
 # Run start script
 CMD ["/start.sh"]
 

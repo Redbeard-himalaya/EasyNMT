@@ -4,7 +4,7 @@
 set -m
 
 # Download the needed model
-python -c "from easynmt import EasyNMT; import os; EasyNMT(os.getenv('EASYNMT_MODEL', 'opus-mt'))"
+# python -c "from easynmt import EasyNMT; import os; EasyNMT(os.getenv('EASYNMT_MODEL', 'opus-mt'))"
 
 # Start the primary process and put it in the background
 /start_backend.sh &
